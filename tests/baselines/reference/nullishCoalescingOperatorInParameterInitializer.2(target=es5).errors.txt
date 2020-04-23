@@ -1,0 +1,9 @@
+tests/cases/conformance/expressions/nullishCoalescingOperator/nullishCoalescingOperatorInParameterInitializer.2.ts(3,7): error TS2373: Initializer of parameter 'b' cannot reference identifier 'a' declared after it.
+
+
+==== tests/cases/conformance/expressions/nullishCoalescingOperator/nullishCoalescingOperatorInParameterInitializer.2.ts (1 errors) ====
+    // https://github.com/microsoft/TypeScript/issues/36295
+    const a = (): string | undefined => undefined;
+    ((b = a() ?? "d") => { var a; })();
+          ~
+!!! error TS2373: Initializer of parameter 'b' cannot reference identifier 'a' declared after it.
